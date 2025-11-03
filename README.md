@@ -867,7 +867,8 @@
                 <div class="bonus">Economia imediata de R$ 399,30</div>
                 <p>Apenas para os primeiros 50 inscritos</p>
                 
-                <a href="#" class="btn btn-large" id="final-cta">GARANTIR MEU ACESSO COM 80% DE DESCONTO</a>
+                <!-- BOTÃO ATUALIZADO COM LINK DA KIWIFY -->
+                <a href="https://pay.kiwify.com.br/p3raEOE" class="btn btn-large" id="final-cta" target="_blank">GARANTIR MEU ACESSO COM 80% DE DESCONTO</a>
                 
                 <div style="margin-top: 20px; font-size: 0.9rem;">
                     <p>✅ Pagamento 100% Seguro | ✅ Acesso Imediato | ✅ Garantia de 7 Dias</p>
