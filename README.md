@@ -28,13 +28,14 @@
             color: var(--text);
             line-height: 1.6;
             scroll-behavior: smooth;
-            padding-top: 40px; /* Espaço para a barra de contador */
+            padding-top: 40px;
+            -webkit-text-size-adjust: 100%; /* Previne zoom em iOS */
         }
         
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 20px;
+            padding: 0 15px;
         }
         
         /* Barra de contador regressivo */
@@ -117,6 +118,7 @@
             border: none;
             cursor: pointer;
             box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+            -webkit-appearance: none; /* Remove estilos padrão do iOS */
         }
         
         .btn:hover {
@@ -147,8 +149,7 @@
         
         /* Header */
         header {
-            background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.9)), url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect width="100" height="100" fill="%23000"/><path d="M0,0 L100,100 M100,0 L0,100" stroke="%23D4AF37" stroke-width="1"/></svg>');
-            background-size: cover;
+            background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.9));
             padding: 60px 0 100px;
             text-align: center;
         }
@@ -158,6 +159,7 @@
             justify-content: center;
             align-items: center;
             margin-bottom: 30px;
+            flex-wrap: wrap;
         }
         
         .logo-image {
@@ -474,6 +476,28 @@
             color: #999;
             margin-top: 30px;
         }
+
+        /* Classes para substituir estilos inline */
+        .testimonials-intro {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 40px;
+        }
+        
+        .testimonials-cta {
+            text-align: center;
+            margin-top: 50px;
+        }
+        
+        .payment-info {
+            margin-top: 20px;
+            font-size: 0.9rem;
+        }
+        
+        .header-countdown {
+            font-weight: bold;
+            color: var(--secondary);
+        }
         
         /* Responsividade - Mobile First */
         /* Telas pequenas (smartphones) */
@@ -591,6 +615,14 @@
                 width: 60px;
                 height: 60px;
             }
+            
+            .testimonials-intro {
+                margin: 0 auto 30px;
+            }
+            
+            .testimonials-cta {
+                margin-top: 30px;
+            }
         }
         
         /* Telas médias (tablets) */
@@ -627,11 +659,6 @@
             }
         }
         
-        /* Telas grandes (desktops) */
-        @media (min-width: 769px) {
-            /* Estilos já definidos acima funcionam para desktop */
-        }
-        
         /* Ajustes específicos para orientação paisagem em mobile */
         @media (max-height: 500px) and (orientation: landscape) {
             header {
@@ -650,6 +677,12 @@
         
         .btn:active {
             transform: scale(0.98);
+        }
+        
+        /* Prevenir problemas de renderização no iOS */
+        * {
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
         }
     </style>
 </head>
@@ -675,7 +708,7 @@
             <div class="attention">
                 ⚠️ ATENÇÃO: 72% dos acessos com condição especial já foram preenchidos.
             </div>
-            <p>Essa é sua chance <strong>ÚNICA</strong> de garantir o Método Venda Inicial com 80%, oferta válida expira em: <span id="header-countdown" style="font-weight: bold; color: var(--secondary);">03:43:00</span></p>
+            <p>Essa é sua chance <strong>ÚNICA</strong> de garantir o Método Venda Inicial com 80%, oferta válida expira em: <span id="header-countdown" class="header-countdown">03:43:00</span></p>
             
             <a href="#oferta" class="btn btn-large">QUERO MINHA PRIMEIRA VENDA!</a>
         </div>
@@ -800,7 +833,7 @@
     <section>
         <div class="container">
             <h2>RESULTADOS REAIS DE QUEM SEGUIU O MÉTODO</h2>
-            <p style="text-align: center; max-width: 800px; margin: 0 auto 40px;">Não são apenas palavras. São comprovantes reais de pessoas comuns que aplicaram o Método Venda Inicial e transformaram suas vidas financeiras.</p>
+            <p class="testimonials-intro">Não são apenas palavras. São comprovantes reais de pessoas comuns que aplicaram o Método Venda Inicial e transformaram suas vidas financeiras.</p>
             
             <div class="testimonials">
                 <!-- Depoimento 1 -->
@@ -834,7 +867,7 @@
                 </div>
             </div>
             
-            <div style="text-align: center; margin-top: 50px;">
+            <div class="testimonials-cta">
                 <h3>Esses resultados podem ser seus também</h3>
                 <p>O Método Venda Inicial não é teoria. É um passo a passo comprovado que já ajudou centenas de pessoas comuns a conquistarem sua independência financeira.</p>
                 <a href="#oferta" class="btn btn-large">QUERO MEU PRIMEIRO RESULTADO</a>
@@ -870,7 +903,7 @@
                 <!-- BOTÃO ATUALIZADO COM LINK DA KIWIFY -->
                 <a href="https://pay.kiwify.com.br/p3raEOE" class="btn btn-large" id="final-cta" target="_blank">GARANTIR MEU ACESSO COM 80% DE DESCONTO</a>
                 
-                <div style="margin-top: 20px; font-size: 0.9rem;">
+                <div class="payment-info">
                     <p>✅ Pagamento 100% Seguro | ✅ Acesso Imediato | ✅ Garantia de 7 Dias</p>
                 </div>
             </div>
