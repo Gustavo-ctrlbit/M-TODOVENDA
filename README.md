@@ -475,8 +475,126 @@
             margin-top: 30px;
         }
         
-        /* Responsividade */
-        @media (max-width: 768px) {
+        /* Responsividade - Mobile First */
+        /* Telas pequenas (smartphones) */
+        @media (max-width: 576px) {
+            body {
+                padding-top: 35px;
+            }
+            
+            #countdown-bar {
+                font-size: 0.7rem;
+                padding: 6px 0;
+            }
+            
+            #countdown {
+                font-size: 0.8rem;
+            }
+            
+            .container {
+                padding: 0 15px;
+            }
+            
+            h1 {
+                font-size: 1.8rem;
+            }
+            
+            h2 {
+                font-size: 1.5rem;
+                margin-bottom: 30px;
+            }
+            
+            h3 {
+                font-size: 1.3rem;
+            }
+            
+            p {
+                font-size: 1rem;
+            }
+            
+            section {
+                padding: 40px 0;
+            }
+            
+            header {
+                padding: 40px 0 60px;
+            }
+            
+            .logo-container {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .logo-image {
+                width: 100px;
+                height: 100px;
+            }
+            
+            .logo-text {
+                font-size: 1.8rem;
+                margin-left: 0;
+                margin-top: 15px;
+            }
+            
+            .subtitle {
+                font-size: 1.1rem;
+            }
+            
+            .btn {
+                padding: 12px 25px;
+                font-size: 1rem;
+                width: 100%;
+                max-width: 300px;
+            }
+            
+            .btn-large {
+                padding: 15px 30px;
+                font-size: 1.2rem;
+            }
+            
+            .solution-cards, .benefits-grid, .testimonials {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .card, .benefit-item, .testimonial {
+                padding: 20px;
+            }
+            
+            .author-section {
+                flex-direction: column;
+                text-align: center;
+                gap: 20px;
+                padding: 20px;
+                margin: 30px 0;
+            }
+            
+            .author-image {
+                width: 120px;
+                height: 120px;
+            }
+            
+            .guarantee, .pricing {
+                padding: 30px 15px;
+                margin-top: 30px;
+            }
+            
+            .price-new {
+                font-size: 2.2rem;
+            }
+            
+            .price-installments {
+                font-size: 1rem;
+            }
+            
+            .footer-logo-image {
+                width: 60px;
+                height: 60px;
+            }
+        }
+        
+        /* Telas médias (tablets) */
+        @media (min-width: 577px) and (max-width: 768px) {
             h1 {
                 font-size: 2.2rem;
             }
@@ -486,11 +604,11 @@
             }
             
             section {
-                padding: 50px 0;
+                padding: 60px 0;
             }
             
-            .benefits-grid, .testimonials, .solution-cards {
-                grid-template-columns: 1fr;
+            .solution-cards, .benefits-grid, .testimonials {
+                grid-template-columns: repeat(2, 1fr);
             }
             
             .logo-container {
@@ -507,19 +625,31 @@
                 flex-direction: column;
                 text-align: center;
             }
-            
-            #countdown-bar {
-                font-size: 0.8rem;
-                padding: 6px 0;
+        }
+        
+        /* Telas grandes (desktops) */
+        @media (min-width: 769px) {
+            /* Estilos já definidos acima funcionam para desktop */
+        }
+        
+        /* Ajustes específicos para orientação paisagem em mobile */
+        @media (max-height: 500px) and (orientation: landscape) {
+            header {
+                padding: 30px 0 50px;
             }
             
-            #countdown {
-                font-size: 0.9rem;
+            section {
+                padding: 30px 0;
             }
-            
-            body {
-                padding-top: 35px;
-            }
+        }
+        
+        /* Melhorias de toque para dispositivos móveis */
+        .btn, .faq-question {
+            -webkit-tap-highlight-color: transparent;
+        }
+        
+        .btn:active {
+            transform: scale(0.98);
         }
     </style>
 </head>
