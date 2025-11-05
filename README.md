@@ -23,6 +23,10 @@
             --text: #FFFFFF;
         }
         
+        html {
+            font-size: 16px;
+        }
+        
         body {
             background-color: var(--primary);
             color: var(--text);
@@ -30,12 +34,15 @@
             scroll-behavior: smooth;
             padding-top: 40px;
             -webkit-text-size-adjust: 100%;
+            overflow-x: hidden; /* Evita rolagem horizontal */
+            width: 100%; /* Garante que o body ocupe toda a largura */
         }
         
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 15px;
+            width: 100%; /* Garante que o container ocupe toda a largura disponível */
         }
         
         /* Barra de contador regressivo */
@@ -515,8 +522,14 @@
         /* Responsividade - Mobile First */
         /* Telas pequenas (smartphones) */
         @media (max-width: 576px) {
+            html {
+                font-size: 14px; /* Reduzir o tamanho base da fonte para mobile */
+            }
+            
             body {
                 padding-top: 35px;
+                width: 100%; /* Garantir que o body ocupe toda a largura */
+                overflow-x: hidden; /* Prevenir rolagem horizontal */
             }
             
             #countdown-bar {
@@ -530,6 +543,8 @@
             
             .container {
                 padding: 0 15px;
+                width: 100%; /* Garantir que o container ocupe toda a largura disponível */
+                max-width: 100%; /* Remover qualquer restrição de largura máxima */
             }
             
             h1 {
@@ -539,6 +554,10 @@
             h2 {
                 font-size: 1.5rem;
                 margin-bottom: 30px;
+            }
+            
+            h2:after {
+                width: 80px; /* Ajustar a linha decorativa para mobile */
             }
             
             h3 {
@@ -636,6 +655,12 @@
             .testimonials-cta {
                 margin-top: 30px;
             }
+            
+            /* Garantir que as imagens não ultrapassem a largura do container */
+            img {
+                max-width: 100%;
+                height: auto;
+            }
         }
         
         /* Telas médias (tablets) */
@@ -670,6 +695,12 @@
                 flex-direction: column;
                 text-align: center;
             }
+            
+            /* Garantir que as imagens não ultrapassem a largura do container */
+            img {
+                max-width: 100%;
+                height: auto;
+            }
         }
         
         /* Ajustes específicos para orientação paisagem em mobile */
@@ -696,6 +727,11 @@
         * {
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
+        }
+        
+        /* Garantir que todos os elementos respeitem a largura do container */
+        * {
+            max-width: 100%;
         }
     </style>
 </head>
