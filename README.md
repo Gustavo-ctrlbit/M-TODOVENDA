@@ -29,7 +29,7 @@
             line-height: 1.6;
             scroll-behavior: smooth;
             padding-top: 40px;
-            -webkit-text-size-adjust: 100%; /* Previne zoom em iOS */
+            -webkit-text-size-adjust: 100%;
         }
         
         .container {
@@ -118,7 +118,7 @@
             border: none;
             cursor: pointer;
             box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
-            -webkit-appearance: none; /* Remove estilos padrão do iOS */
+            -webkit-appearance: none;
         }
         
         .btn:hover {
@@ -365,15 +365,28 @@
         }
         
         .price-new {
-            font-size: 3rem;
+            font-size: 2.5rem;
             font-weight: 700;
             color: var(--secondary);
             margin: 10px 0;
         }
         
         .price-installments {
-            font-size: 1.2rem;
-            margin-bottom: 30px;
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: var(--accent);
+            margin: 15px 0;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .installment-highlight {
+            background: linear-gradient(135deg, var(--accent), var(--secondary));
+            color: var(--primary);
+            padding: 8px 16px;
+            border-radius: 8px;
+            display: inline-block;
+            margin: 10px 0;
+            box-shadow: 0 4px 12px rgba(212, 175, 55, 0.4);
         }
         
         .bonus {
@@ -604,11 +617,11 @@
             }
             
             .price-new {
-                font-size: 2.2rem;
+                font-size: 2rem;
             }
             
             .price-installments {
-                font-size: 1rem;
+                font-size: 1.8rem;
             }
             
             .footer-logo-image {
@@ -690,7 +703,7 @@
     <!-- Barra de contador regressivo -->
     <div id="countdown-bar">
         <div class="container">
-            ⚠️ OFERTA EXPIRA EM: <span id="countdown">03:43:00</span> - NÃO DEIXE PARA DEPOIS!
+            ⚠️ OFERTA EXPIRA EM: <span id="countdown">20:00</span> - NÃO DEIXE PARA DEPOIS!
         </div>
     </div>
 
@@ -708,7 +721,7 @@
             <div class="attention">
                 ⚠️ ATENÇÃO: 72% dos acessos com condição especial já foram preenchidos.
             </div>
-            <p>Essa é sua chance <strong>ÚNICA</strong> de garantir o Método Venda Inicial com 80%, oferta válida expira em: <span id="header-countdown" class="header-countdown">03:43:00</span></p>
+            <p>Essa é sua chance <strong>ÚNICA</strong> de garantir o Método Venda Inicial com 80%, oferta válida expira em: <span id="header-countdown" class="header-countdown">20:00</span></p>
             
             <a href="#oferta" class="btn btn-large">QUERO MINHA PRIMEIRA VENDA!</a>
         </div>
@@ -895,7 +908,11 @@
             <div class="pricing">
                 <div class="price-old">De R$ 497,00</div>
                 <div class="price-new">R$ 97,70</div>
-                <div class="price-installments">ou 12x de R$ 10,10</div>
+                
+                <!-- DESTAQUE MAIOR PARA O VALOR PARCELADO -->
+                <div class="installment-highlight">
+                    <div class="price-installments">12x de R$ 10,10</div>
+                </div>
                 
                 <div class="bonus">Economia imediata de R$ 399,30</div>
                 <p>Apenas para os primeiros 50 inscritos</p>
@@ -968,19 +985,18 @@
     </footer>
 
     <script>
-        // Contador regressivo de 3 horas e 43 minutos
+        // Contador regressivo de 20 minutos
         function startCountdown() {
             const countdownElement = document.getElementById('countdown');
             const headerCountdownElement = document.getElementById('header-countdown');
-            let totalSeconds = (3 * 60 * 60) + (43 * 60); // 3 horas e 43 minutos em segundos
+            let totalSeconds = 20 * 60; // 20 minutos em segundos
             
             function updateCountdown() {
-                const hours = Math.floor(totalSeconds / 3600);
-                const minutes = Math.floor((totalSeconds % 3600) / 60);
+                const minutes = Math.floor(totalSeconds / 60);
                 const seconds = totalSeconds % 60;
                 
                 const countdownText = 
-                    `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+                    `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
                 
                 countdownElement.textContent = countdownText;
                 headerCountdownElement.textContent = countdownText;
@@ -989,9 +1005,9 @@
                     totalSeconds--;
                     setTimeout(updateCountdown, 1000);
                 } else {
-                    countdownElement.textContent = "00:00:00";
+                    countdownElement.textContent = "00:00";
                     countdownElement.style.color = "#ff4d4d";
-                    headerCountdownElement.textContent = "00:00:00";
+                    headerCountdownElement.textContent = "00:00";
                     headerCountdownElement.style.color = "#ff4d4d";
                 }
             }
