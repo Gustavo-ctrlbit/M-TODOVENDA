@@ -519,6 +519,26 @@
             color: var(--secondary);
         }
         
+        /* ANIMAÇÃO DE PULSAÇÃO PARA O BOTÃO */
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+                box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+            }
+            50% {
+                transform: scale(1.05);
+                box-shadow: 0 8px 25px rgba(212, 175, 55, 0.6);
+            }
+            100% {
+                transform: scale(1);
+                box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+            }
+        }
+        
+        .btn-pulse {
+            animation: pulse 2s infinite;
+        }
+        
         /* Responsividade - Mobile First */
         /* Telas pequenas (smartphones) */
         @media (max-width: 576px) {
@@ -660,6 +680,22 @@
             img {
                 max-width: 100%;
                 height: auto;
+            }
+            
+            /* Ajustar animação de pulsação para mobile */
+            @keyframes pulse {
+                0% {
+                    transform: scale(1);
+                    box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+                }
+                50% {
+                    transform: scale(1.03);
+                    box-shadow: 0 6px 20px rgba(212, 175, 55, 0.6);
+                }
+                100% {
+                    transform: scale(1);
+                    box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+                }
             }
         }
         
@@ -811,7 +847,7 @@
                 <img src="https://www.dropbox.com/scl/fi/h54044utwgq09a5zda3ca/ChatGPT-Image-3-de-nov.-de-2025-10_20_00.png?rlkey=74xlanyd943o82qc3kfwgiiz6&st=aea0dolb&dl=1" alt="Gustavo Figueredo" class="author-image">
                 <div class="author-info">
                     <h3>Gustavo Figueredo</h3>
-                    <p>Vim de uma família simples, onde o dinheiro era sempre uma preocupação. Comecei do absoluto zero, sem contatos, sem experiência e sem saber por onde começar no mundo digital.</p>
+                    <p>Vim de uma família simples, onde o dinheiro era sempre uma preocupação. Comecei do absoluto zero, sans contatos, sans experiência e sans saber por onde começar no mundo digital.</p>
                     <p>Depois de muitas tentativas frustradas, desenvolvi um método próprio que me levou a <span class="author-highlight">faturar mais de R$ 100.000 trimestralmente</span> com vendas online.</p>
                     <p>Hoje, minha missão é compartilhar esse conhecimento com pessoas que, assim como eu, querem transformar suas vidas através do digital, mas não sabem por onde começar.</p>
                     <p>O Método Venda Inicial nasceu da minha vontade de criar um caminho claro e acessível para quem está começando, baseado no que realmente funcionou para mim.</p>
@@ -837,7 +873,7 @@
                 </div>
                 <div class="card">
                     <h3>TRÁFEGO INTELIGENTE</h3>
-                    <p>Onde e como anunciar gastando pouco e vendendo muito, sem complicação.</p>
+                    <p>Onde e como anunciar gastando pouco e vendendo muito, sans complicação.</p>
                 </div>
             </div>
         </div>
@@ -953,8 +989,8 @@
                 <div class="bonus">Economia imediata de R$ 399,30</div>
                 <p>Apenas para os primeiros 50 inscritos</p>
                 
-                <!-- BOTÃO ATUALIZADO COM LINK DA KIWIFY -->
-                <a href="https://pay.kiwify.com.br/p3raEOE" class="btn btn-large" id="final-cta" target="_blank">GARANTIR MEU ACESSO COM 80% DE DESCONTO</a>
+                <!-- BOTÃO ATUALIZADO COM LINK DA KIWIFY E EFEITO DE PULSAÇÃO -->
+                <a href="https://pay.kiwify.com.br/p3raEOE" class="btn btn-large btn-pulse" id="final-cta" target="_blank">GARANTIR MEU ACESSO COM 80% DE DESCONTO</a>
                 
                 <div class="payment-info">
                     <p>✅ Pagamento 100% Seguro | ✅ Acesso Imediato | ✅ Garantia de 7 Dias</p>
@@ -985,14 +1021,14 @@
             <div class="faq-item">
                 <div class="faq-question">Preciso aparecer nas redes sociais? <span>+</span></div>
                 <div class="faq-answer">
-                    <p>Não. Ensino estratégias de vendas que funcionam sem necessidade de exposição. Você pode vender de forma discreta.</p>
+                    <p>Não. Ensino estratégias de vendas que funcionam sans necessidade de exposição. Você pode vender de forma discreta.</p>
                 </div>
             </div>
             
             <div class="faq-item">
                 <div class="faq-question">O conteúdo é só sobre vendas? <span>+</span></div>
                 <div class="faq-answer">
-                    <p>Sim! 100% focado em técnicas práticas de vendas e anúncios para o digital, sem distrações.</p>
+                    <p>Sim! 100% focado em técnicas práticas de vendas e anúncios para o digital, sans distrações.</p>
                 </div>
             </div>
             
