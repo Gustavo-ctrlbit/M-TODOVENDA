@@ -539,6 +539,49 @@
             animation: pulse 2s infinite;
         }
         
+        /* Estilos para a seção de vídeo */
+        .video-section {
+            text-align: center;
+            padding: 80px 0;
+        }
+        
+        .video-container {
+            position: relative;
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            border: 3px solid var(--secondary);
+        }
+        
+        .video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%; /* Proporção 16:9 */
+            height: 0;
+        }
+        
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        
+        .video-description {
+            max-width: 800px;
+            margin: 30px auto 0;
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+        
+        .video-cta {
+            margin-top: 30px;
+        }
+        
         /* Responsividade - Mobile First */
         /* Telas pequenas (smartphones) */
         @media (max-width: 576px) {
@@ -697,6 +740,20 @@
                     box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
                 }
             }
+            
+            /* Ajustes para a seção de vídeo em mobile */
+            .video-section {
+                padding: 40px 0;
+            }
+            
+            .video-container {
+                border-width: 2px;
+            }
+            
+            .video-description {
+                margin-top: 20px;
+                font-size: 1rem;
+            }
         }
         
         /* Telas médias (tablets) */
@@ -798,6 +855,31 @@
             <a href="#oferta" class="btn btn-large">QUERO MINHA PRIMEIRA VENDA!</a>
         </div>
     </header>
+
+    <!-- NOVA SEÇÃO: Vídeo do YouTube -->
+    <section class="video-section">
+        <div class="container">
+            <h2>VEJA O EXEMPLO QUE TOMOU A SUA ATENÇÃO, VOCÊ PODE FAZER O MESMO</h2>
+            <p class="video-description">Assista a este exemplo real de como o Método Venda Inicial pode transformar sua jornada de vendas online, mesmo que você esteja começando do zero.</p>
+            
+            <div class="video-container">
+                <div class="video-wrapper">
+                    <!-- Vídeo do YouTube Shorts -->
+                    <iframe src="https://www.youtube.com/embed/OwWzrAxSmyE" 
+                            title="Método Venda Inicial - Exemplo Real" 
+                            frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen>
+                    </iframe>
+                </div>
+            </div>
+            
+            <div class="video-cta">
+                <p><strong>Pronto para aplicar o método e ver resultados?</strong></p>
+                <a href="#oferta" class="btn btn-large">QUERO MINHA PRIMEIRA VENDA!</a>
+            </div>
+        </div>
+    </section>
 
     <!-- Seção Para Quem É -->
     <section class="section-light">
